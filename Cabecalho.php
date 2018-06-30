@@ -19,6 +19,6 @@
 				<a class="nav-link" href="#">Visualizar Vendas</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Sair</a>
+				<a class="nav-link" href="Sair.php">Sair</a>
 			</li>
 		</ul>
