@@ -57,7 +57,10 @@ $uri_origem = isset($_GET['uri_origem'])? $_GET['uri_origem']: "index.php";
         $ret = $aut->autenticar($idUsuario, $senha);
         if($ret->getTemErros()){
             foreach ($ret->getErros() as $erro) {
-                echo "$erro <br>";
+                echo 
+                "<div class='row justify-content-center' style='margin-top: 25px'>
+                	<div class='alert-danger p-3 rounded'>$erro<div>
+                </div>";
             }
         }
         else{
