@@ -1,6 +1,7 @@
 <?php 
 require_once("Sessao.php");
 require_once("Usuario.php");
+require_once("Conexao.php");
 
 class RepositorioDeUsuarios{
     private $usuarios;
@@ -12,17 +13,10 @@ class RepositorioDeUsuarios{
 
     private function carregarVetor()
     {
-        $sessao = Sessao::getInstance();
-
-        if ($sessao->existe("VETOR_USUARIOS_PARA_TESTES"))
-        {
-            $this->usuarios = $sessao->recuperar("VETOR_USUARIOS_PARA_TESTES");
-        }
-        else{
-            $this->usuarios = array();
-            $user = new Usuario("Administrador", "admin", "admin", "1111111");
-            $this->usuarios[] = $user;
-        }
+        $con = new ConnectionDB();
+        $result = $con->execute("SELECT * from usuario;");
+        $this->usuarios = $result;
+        $con->desconnect();
     }
     private function salvarAlteracoesDoVetor()
     {
@@ -49,12 +43,19 @@ class RepositorioDeUsuarios{
     public function buscarPorIdUsuario($idUsuario)
     {
         foreach ($this->usuarios as $usuario) {
-            if ($usuario->getIdUsuario() == $idUsuario)
-            {
-                return $usuario;
+            if ($usuario['usuario'] == $idUsuario)
+            {   
+                $user = $this->parseToUsuario($usuario['usuario'],
+                    $usuario['senha'],$usuario['idEmpresa']);
+                return $user;
             }
         }
         return null;
+    }
+
+    public function parseToUsuario($idUsario,$senha,$idEmpresa){
+        $user = new Usuario($idUsario,$senha,$idEmpresa);
+        return $user;
     }
 }
 ?>

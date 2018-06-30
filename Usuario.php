@@ -1,20 +1,15 @@
 <?php
 class Usuario{
-    private $nome;
     private $idUsuario;
     private $senha;
-    private $acessos;
+    private $idEmpresa;
 
-    public function Usuario ($nome, $idUsuario, $senha, $acessos){
-        $this->nome = $nome;
+    public function Usuario ($idUsuario, $senha, $idEmpresa){
         $this->senha = $senha;
         $this->idUsuario = $idUsuario;
-        $this->acessos = $acessos;
+        $this->idEmpresa = $idEmpresa;
     }
 
-    public function getNome(){
-        return $this->nome;
-    }
     public function getIdUsuario(){
         return $this->idUsuario;
     }
@@ -23,8 +18,8 @@ class Usuario{
         return $this->senha == $senha;
     }
 
-    public function getAcessos(){
-        return $this->acessos;
+    public function getIdEmpresa(){
+        return $this->idEmpresa;
     }
 }
 ?>

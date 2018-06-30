@@ -2,9 +2,8 @@
 class Autenticacao{
     private $nome;
     private $hora;
-    private $permissoes;
 
-    public function Autenticacao($nome, $hora, $permissoes){
+    public function Autenticacao($nome, $hora){
         $this->nome = $nome;
         $this->hora = $hora;
         $this->permissoes = $permissoes;
@@ -16,9 +15,5 @@ class Autenticacao{
     public function getHora(){
         return $this->hora;
     }
-    public function getPermissoes(){
-        return $this->permissoes;
-    }
-
 }
 ?>

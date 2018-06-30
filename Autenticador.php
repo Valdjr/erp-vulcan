@@ -20,7 +20,7 @@ require_once("RetornoDaAutenticacao.php");
                 return $retorno;
             }
 
-            $autenticacao = new Autenticacao($usuario->getNome(),date('d/m/Y H:i:s'), $usuario->getAcessos());
+            $autenticacao = new Autenticacao($usuario->getIdUsuario(),date('d/m/Y H:i:s'));
             $retorno->setAutenticacao($autenticacao);
 
             return $retorno;
