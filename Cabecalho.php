@@ -9,16 +9,31 @@
 <body>
 	<div class="container">
 		<ul class="nav justify-content-center">
-			<li class="nav-item">
-				<a class="nav-link active" href="Dashboard.php">Dashboard</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="InserirVenda.php">Inserir Venda</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="ListarVendas.php">Visualizar Vendas</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="Sair.php">Sair</a>
-			</li>
+			<?php
+				if($autenticacao->getIdEmpresa() == 1){
+					?>
+						<li class="nav-item">
+							<a class="nav-link active" href="DashboardConselho.php">Dashboard</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Sair.php">Sair</a>
+						</li>
+					<?php
+				}else{
+					?>
+						<li class="nav-item">
+							<a class="nav-link active" href="Dashboard.php">Dashboard</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="InserirVenda.php">Inserir Venda</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="ListarVendas.php">Visualizar Vendas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Sair.php">Sair</a>
+						</li>
+					<?php		
+				}
+					?>
 		</ul>
