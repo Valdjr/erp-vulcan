@@ -1,3 +1,6 @@
+DROP SCHEMA  IF EXISTS vulcan;
+CREATE DATABASE vulcan;  
+
 -- phpMyAdmin SQL Dump
 -- version 4.8.0.1
 -- https://www.phpmyadmin.net/
@@ -86,7 +89,7 @@ CREATE TABLE `venda` (
 
 INSERT INTO `venda` (`id`, `idEmpresa`, `cliente`, `data`, `valor`, `cotacao`, `valoruss`) VALUES
 (1, 2, 'joaozinho da silva', '2018-06-24', 3.78, 3.78, 1),
-(2, 2, 'valdir', '0000-00-00', 358, 3.58, 100),
+(2, 2, 'valdir', '2018-06-08', 358, 3.58, 100),
 (3, 2, 'valdir', '2018-06-26', 358, 3.58, 100);
 
 --
