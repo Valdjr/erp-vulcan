@@ -16,7 +16,7 @@
 				<a class="nav-link" href="InserirVenda.php">Inserir Venda</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Visualizar Vendas</a>
+				<a class="nav-link" href="ListarVendas.php">Visualizar Vendas</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="Sair.php">Sair</a>
