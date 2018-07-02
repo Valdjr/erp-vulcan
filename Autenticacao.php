@@ -1,19 +1,13 @@
 <?php
 class Autenticacao{
-    private $nome;
-    private $hora;
+    private $idEmpresa;
 
-    public function Autenticacao($nome, $hora){
-        $this->nome = $nome;
-        $this->hora = $hora;
-        $this->permissoes = $permissoes;
+    public function Autenticacao($idEmpresa){
+        $this->idEmpresa = $idEmpresa;
     }
 
-    public function getNome(){
-        return $this->nome;
-    }
-    public function getHora(){
-        return $this->hora;
+    public function getIdEmpresa(){
+        return $this->idEmpresa;
     }
 }
 ?>

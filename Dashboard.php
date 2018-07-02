@@ -1,10 +1,15 @@
 <?php
-
+require_once("IncludeMenuAutenticacao.php");
 require_once('Cabecalho.php');
 require_once('Conexao.php');
+require_once('Sessao.php');
+
+// $session = Sessao::getInstance();
+
+// $autenticacao = $session->recuperar("AUTENTICACAO");
 
 $db = new ConnectionDB();
-$dados = $db->execute('select * from venda');
+$dados = $db->execute('select * from venda where idEmpresa = '.$autenticacao->getIdEmpresa());
 
 $totalVendas = 0;
 $totalVendasuss = 0;

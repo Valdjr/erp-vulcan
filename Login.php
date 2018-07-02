@@ -66,7 +66,12 @@ $uri_origem = isset($_GET['uri_origem'])? $_GET['uri_origem']: "index.php";
         else{
             $sessao = Sessao::getInstance();
             $sessao->salvar("AUTENTICACAO", $ret->getAutenticacao());
-            header("location: $uri_origem");
+            $a = $ret->getAutenticacao();
+            if($a->getIdEmpresa() == 1) {
+            	header("location: DashboardConselho.php");
+            }else{
+            	header("location: Dashboard.php");
+            }
         }
     }
 ?>

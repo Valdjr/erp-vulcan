@@ -6,7 +6,6 @@ $sessao = Sessao::getInstance();
 
 if ($sessao->existe("AUTENTICACAO")){
     $autenticacao = $sessao->recuperar("AUTENTICACAO");
-    $nome = $autenticacao->getNome();
 }
 else{
     $uri = $_SERVER['REQUEST_URI'];
