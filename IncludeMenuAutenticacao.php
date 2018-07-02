@@ -6,6 +6,9 @@ $sessao = Sessao::getInstance();
 
 if ($sessao->existe("AUTENTICACAO")){
     $autenticacao = $sessao->recuperar("AUTENTICACAO");
+    if($autenticacao->getIdEmpresa() == 1){
+    	header("Location: DashboardConselho.php");
+    }
 }
 else{
     $uri = $_SERVER['REQUEST_URI'];

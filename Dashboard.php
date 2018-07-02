@@ -24,6 +24,10 @@ foreach($dados as $dado) {
 
 $ticketMedio = $totalVendas / $quantidadeVendas;
 
+$totalVendas = number_format($totalVendas, 2);
+$totalVendasuss = number_format($totalVendasuss, 2);
+$ticketMedio = number_format($ticketMedio, 2);
+$quantidadeVendas = number_format($quantidadeVendas, 2);
 ?>
 
 <div class="row mt-5">
