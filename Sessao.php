@@ -36,4 +36,3 @@ public function encerrar(){
     unset($_SESSION['AUTENTICACAO']);
 }
 }
-?>

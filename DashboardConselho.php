@@ -17,15 +17,26 @@ $table = "<table class='table mt-5'>
 			</thead>
 			<tbody>";
 $i = 1;
+$totais = 0;
+$totaisQuantidade = 0;
 foreach($dados as $dado) {
 	$table .=	"<tr>
 					<th scope='row'>".$i."</th>
 					<td>".$dado['nome']."</td>
-					<td>".$dado['valorUss']."</td>
+					<td>".number_format($dado['valorUss'], 2)."</td>
 					<td>".$dado['quantidade']."</td>
 				</tr>";
 	$i++;
+	$totais += $dado['valorUss'];
+	$totaisQuantidade += $dado['quantidade'];
 }
+$table .=	"<tr>
+				<th scope='row'>-</th>
+				<td>Totais</td>
+				<td>".number_format($totais, 2)."</td>
+				<td>".$totaisQuantidade."</td>
+			</tr>";
+
 
 $table .=		"</tbody>
 			</table>";

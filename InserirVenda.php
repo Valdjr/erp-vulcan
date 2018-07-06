@@ -67,7 +67,7 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 					<div class="input-group-prepend">
 						<div class="input-group-text"><i class="fas fa-exchange-alt"></i></div>
 					</div>
-					<input type="number" step="0.01" class="form-control" id="cotacao" name="cotacao" value="<?= $cotacao ?>">
+					<input type="number" step="0.001" class="form-control" id="cotacao" name="cotacao" value="<?= $cotacao ?>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -76,7 +76,7 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 					<div class="input-group-prepend">
 						<div class="input-group-text"><i class="fas fa-dollar-sign"></i></div>
 					</div>
-					<input type="number" step="0.01" class="form-control" id="valoruss" name="valoruss" value="0">
+					<input type="number" step="0.01" class="form-control" readonly="readonly" id="valoruss" name="valoruss" value="0">
 				</div>
 			</div>
 			<div style="text-align: center;">
@@ -95,6 +95,10 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 		$('#valoruss').val( parseFloat(vUss.toFixed(2)));
 	});
 	$('#valor').blur(function(){
+		var vUss = $('#valor').val() * $('#cotacao').val();
+		$('#valoruss').val( parseFloat(vUss.toFixed(2)));
+	});
+	$('#valoruss').blur(function(){
 		var vUss = $('#valor').val() * $('#cotacao').val();
 		$('#valoruss').val( parseFloat(vUss.toFixed(2)));
 	});

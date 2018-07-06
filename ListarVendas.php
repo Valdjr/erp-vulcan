@@ -22,6 +22,8 @@ $table = "<table class='table mt-5'>
 			</thead>
 			<tbody>";
 $i = 1;
+$totais = 0;
+$totaisQuantidade = 0;
 foreach($dados as $dado) {
 	$date = new DateTime($dado['data']);
 	$data = $date->format('d/m/Y');
@@ -29,11 +31,20 @@ foreach($dados as $dado) {
 					<th scope='row'>".$i."</th>
 					<td>".$data."</td>
 					<td>".$dado['cliente']."</td>
-					<td>".$dado['valor']."</td>
-					<td>".$dado['valoruss']."</td>
+					<td>".number_format($dado['valor'], 2)."</td>
+					<td>".number_format($dado['valoruss'],2)."</td>
 				</tr>";
 	$i++;
+	$totais += $dado['valor'];
+	$totaisQuantidade += $dado['valoruss'];
 }
+$table .=	"<tr>
+				<th scope='row'>Totais</th>
+				<td>-</td>
+				<td>-</td>
+				<td>".number_format($totais, 2)."</td>
+				<td>".number_format($totaisQuantidade,2)."</td>
+			</tr>";
 
 $table .=		"</tbody>
 			</table>";
