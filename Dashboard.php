@@ -10,6 +10,9 @@ require_once('Sessao.php');
 
 $db = new ConnectionDB();
 $dados = $db->execute('select * from venda where idEmpresa = '.$autenticacao->getIdEmpresa());
+$empresa = $db->execute('select moeda from empresa where id = '.$autenticacao->getIdEmpresa());
+
+$moeda = $empresa[0]['moeda'];
 
 $totalVendas = 0;
 $totalVendasuss = 0;
@@ -35,7 +38,7 @@ $quantidadeVendas = number_format($quantidadeVendas, 2);
 	<div class="col-4">
 		<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Total de Vendas</h5>
+				<h5 class="card-title">Total de Vendas (<?=strtoupper($moeda)?>)</h5>
 				<p class="card-text" id="totalVendas"><?php echo $totalVendas ?></p>
 			</div>
 		</div>

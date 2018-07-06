@@ -5,9 +5,12 @@ require_once('Cabecalho.php');
 require_once('Conexao.php');
 
 $db = new ConnectionDB();
-$dados = $db->execute('select * from venda where idEmpresa = '.$autenticacao->getIdEmpresa().' ORDER BY id DESC LIMIT 1');
 
+$dados = $db->execute('select * from venda where idEmpresa = '.$autenticacao->getIdEmpresa().' ORDER BY id DESC LIMIT 1');
 $cotacao = $dados[0]['cotacao'];
+
+$dadosEmpresa = $db->execute('select moeda from empresa where id = '.$autenticacao->getIdEmpresa());
+$moeda = $dadosEmpresa[0]['moeda'];
 
 //verifica por get se tem erro
 $erro = isset($_GET['erro']) ? $_GET['erro'] : '';
@@ -50,7 +53,7 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="valor">Valor</label>
+				<label for="valor">Valor (<?= strtoupper($moeda) ?>)</label>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text"><i class="fas fa-money-bill-alt"></i></div>
@@ -68,7 +71,7 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="valoruss">Valor (US$)</label>
+				<label for="valoruss">Valor (USD)</label>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text"><i class="fas fa-dollar-sign"></i></div>
@@ -88,11 +91,11 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$('#cotacao').blur(function(){
-		var vUss = $('#valor').val() / $('#cotacao').val();
+		var vUss = $('#valor').val() * $('#cotacao').val();
 		$('#valoruss').val( parseFloat(vUss.toFixed(2)));
 	});
 	$('#valor').blur(function(){
-		var vUss = $('#valor').val() / $('#cotacao').val();
+		var vUss = $('#valor').val() * $('#cotacao').val();
 		$('#valoruss').val( parseFloat(vUss.toFixed(2)));
 	});
 </script>
