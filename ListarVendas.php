@@ -4,8 +4,6 @@ require_once('Cabecalho.php');
 require_once('Conexao.php');
 
 $db = new ConnectionDB();
-// $query = 'select * from venda where idEmpresa = '. $autenticacao->getIdEmpresa() . " ORDER BY data ASC;";
-// echo $query;
 $dados = $db->execute('select * from venda where idEmpresa = '. $autenticacao->getIdEmpresa() . ' ORDER BY data ASC;');
 $result = $db->execute('select * from empresa where id = ' . $autenticacao->getIdEmpresa() . ';');
 $moeda = strtoupper ($result[0]['moeda']);

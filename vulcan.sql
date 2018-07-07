@@ -45,6 +45,7 @@ CREATE TABLE `empresa` (
 INSERT INTO `empresa` (`id`, `nivel`, `nome`, `moeda`) VALUES
 (1, 0, 'eua', 'usd'),
 (2, 0, 'brasil', 'brl');
+(0, 1, 'conselho', 'usd');
 
 -- --------------------------------------------------------
 
@@ -91,6 +92,11 @@ INSERT INTO `venda` (`id`, `idEmpresa`, `cliente`, `data`, `valor`, `cotacao`, `
 (1, 2, 'joaozinho da silva', '2018-06-24', 3.78, 3.78, 1),
 (2, 2, 'valdir', '2018-06-08', 358, 3.58, 100),
 (3, 2, 'valdir', '2018-06-26', 358, 3.58, 100);
+
+INSERT INTO `venda` (`id`, `idEmpresa`, `cliente`, `data`, `valor`, `cotacao`, `valoruss`) VALUES
+(1, 1, 'Silva', '2018-06-24', 3.78, 3.78, 1),
+(2, 1, 'Dougas', '2018-06-08', 3580, 3.58, 1000),
+(3, 1, 'Paulo', '2018-06-26', 358, 3.58, 100);
 
 --
 -- Indexes for dumped tables
