@@ -16,6 +16,9 @@
 							<a class="nav-link active" href="DashboardConselho.php">Dashboard</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" href="Cadastrar.php">Cadastrar</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="Sair.php">Sair</a>
 						</li>
 					<?php
