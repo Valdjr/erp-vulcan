@@ -22,4 +22,3 @@ class Usuario{
         return $this->idEmpresa;
     }
 }
-?>

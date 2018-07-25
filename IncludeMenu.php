@@ -5,4 +5,3 @@
     if(empty($autenticacao)){
  	   require_once ("IncludeMenuAutenticacao.php");	
     }
-?>
