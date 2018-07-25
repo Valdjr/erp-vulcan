@@ -3,7 +3,7 @@
 require_once("IncludeMenuAutenticacao.php");
 require_once("Cabecalho.php");
 
-//verifica por get se tem erro
+//verifica por get se tem algum erro
 $erro = isset($_GET['erro']) ? $_GET['erro'] : '';
 $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : '';
 $mensagem = '';
