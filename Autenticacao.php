@@ -10,4 +10,3 @@ class Autenticacao{
         return $this->idEmpresa;
     }
 }
-?>

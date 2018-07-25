@@ -23,4 +23,3 @@ class RetornoDaAutenticacao{
         return $this->erros;
     }
 }
-?>

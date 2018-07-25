@@ -26,4 +26,3 @@ require_once("RetornoDaAutenticacao.php");
             return $retorno;
         }
     }
-?>
