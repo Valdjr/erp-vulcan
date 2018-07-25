@@ -4,7 +4,7 @@ require_once('Cabecalho.php');
 require_once('Conexao.php');
 
 $db = new ConnectionDB();
-$dados = $db->execute('select e.nome, count(v.id) as quantidade, sum(v.valoruss) as valorUss from venda v left join empresa e on v.idEmpresa = e.id group by v.idEmpresa;');
+$dados = $db->execute('select e.nome, count(v.id) as quantidade, ifnull(sum(v.valoruss), 0) as valorUss from empresa e left join venda v on v.idEmpresa = e.id group by e.id;');
 
 $table = "<table class='table mt-5'>
 			<thead>

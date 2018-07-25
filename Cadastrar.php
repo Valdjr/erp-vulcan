@@ -12,7 +12,7 @@ if($erro == 1) { //tentou salvar com algum campo vazio
 	$mensagem = "<div class='alert alert-danger'>Preencha os campos!</div>";
 	$erro = '';
 } else if($sucesso == 1){
-	$mensagem = "<div class='alert alert-success'>Venda inserida com sucesso!</div>";
+	$mensagem = "<div class='alert alert-success'>Empresa inserida com sucesso!</div>";
 	$sucesso = '';
 }
 
